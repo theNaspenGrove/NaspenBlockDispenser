@@ -1,0 +1,4 @@
+name: NaspenBlockDispenser
+version: '${project.version}'
+main: net.mov51.naspenblockdispenser.NaspenBlockDispenser
+api-version: '1.20'
