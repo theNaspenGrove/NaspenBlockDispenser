@@ -13,6 +13,9 @@ public class BlockDispenseEventListener implements Listener {
     @EventHandler
     public void onBlockDispenseEvent(BlockDispenseEvent event) {
         if(event.getBlock().getType() == org.bukkit.Material.DISPENSER){
+            if(event.getItem().getType() == Material.SHULKER_BOX){
+                return;
+            }
             if(event.getItem().getType() == Material.TNT){
                 return;
             }
