@@ -19,9 +19,6 @@ public class BlockDispenseEventListener implements Listener {
             if(event.getItem().getType() == Material.TNT){
                 return;
             }
-            if(event.getItem().getType() == Material.WATER_BUCKET){
-                return;
-            }
             if(event.getItem().getType().isBlock()){
                 Block placeAtBlock = event.getBlock().getWorld().getBlockAt(event.getBlock().getLocation().add(((Directional) event.getBlock().getBlockData()).getFacing().getDirection()));
                 if(placeAtBlock.getType().isAir() && !containsEntity(placeAtBlock)){
