@@ -104,6 +104,6 @@ public class BlockDispenseEventListener implements Listener {
     }
 
     private static boolean containsEntity(Block block) {
-        return !block.getLocation().toCenterLocation().getNearbyLivingEntities(0.5).isEmpty();
+        return !block.getLocation().toCenterLocation().getNearbyEntities(0.5, 0.5, 0.5).isEmpty();
     }
 }
