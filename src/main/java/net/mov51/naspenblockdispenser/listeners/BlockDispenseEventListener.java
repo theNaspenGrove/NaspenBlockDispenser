@@ -50,10 +50,30 @@ public class BlockDispenseEventListener implements Listener {
             Material.SHEARS
     };
 
+    private static final Material[] ShulkerBoxes = {
+            Material.SHULKER_BOX,
+            Material.BLACK_SHULKER_BOX,
+            Material.BLUE_SHULKER_BOX,
+            Material.BROWN_SHULKER_BOX,
+            Material.CYAN_SHULKER_BOX,
+            Material.GRAY_SHULKER_BOX,
+            Material.GREEN_SHULKER_BOX,
+            Material.LIGHT_BLUE_SHULKER_BOX,
+            Material.LIGHT_GRAY_SHULKER_BOX,
+            Material.LIME_SHULKER_BOX,
+            Material.MAGENTA_SHULKER_BOX,
+            Material.ORANGE_SHULKER_BOX,
+            Material.PINK_SHULKER_BOX,
+            Material.PURPLE_SHULKER_BOX,
+            Material.RED_SHULKER_BOX,
+            Material.WHITE_SHULKER_BOX,
+            Material.YELLOW_SHULKER_BOX
+    };
+
     @EventHandler
     public void onBlockDispenseEvent(BlockDispenseEvent event) {
         if (event.getBlock().getType() == org.bukkit.Material.DISPENSER) {
-            if (event.getItem().getType() == Material.SHULKER_BOX) {
+            if (Arrays.asList(ShulkerBoxes).contains(event.getItem().getType())) {
                 return;
             }
             if (Arrays.asList(tools).contains(event.getItem().getType())) {
