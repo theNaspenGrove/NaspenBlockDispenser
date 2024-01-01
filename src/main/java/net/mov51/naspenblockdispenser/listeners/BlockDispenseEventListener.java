@@ -76,6 +76,9 @@ public class BlockDispenseEventListener implements Listener {
             if (Arrays.asList(ShulkerBoxes).contains(event.getItem().getType())) {
                 return;
             }
+            if(event.getItem().getType() == Material.WITHER_SKELETON_SKULL){
+                return;
+            }
             if (Arrays.asList(tools).contains(event.getItem().getType())) {
                 ItemStack tool = event.getItem();
                 Block breakAtBlock = event.getBlock().getWorld().getBlockAt(event.getBlock().getLocation().add(((Directional) event.getBlock().getBlockData()).getFacing().getDirection()));
