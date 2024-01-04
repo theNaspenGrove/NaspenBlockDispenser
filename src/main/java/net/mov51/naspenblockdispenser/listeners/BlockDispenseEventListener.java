@@ -87,7 +87,7 @@ public class BlockDispenseEventListener implements Listener {
                     event.getBlock().getLocation().getWorld().playSound(event.getBlock().getLocation(),org.bukkit.Sound.BLOCK_DISPENSER_FAIL,1,1);
                     return;
                 }
-                breakAtBlock.breakNaturally(tool);
+                breakAtBlock.breakNaturally(tool, true,true);
                 event.setCancelled(true);
             }
             if (event.getItem().getType().isBlock()) {
