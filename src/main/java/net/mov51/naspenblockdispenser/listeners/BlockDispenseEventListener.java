@@ -83,6 +83,8 @@ public class BlockDispenseEventListener implements Listener {
                 ItemStack tool = event.getItem();
                 Block breakAtBlock = event.getBlock().getWorld().getBlockAt(event.getBlock().getLocation().add(((Directional) event.getBlock().getBlockData()).getFacing().getDirection()));
                 if(breakAtBlock.getType().isAir()){
+                    event.setCancelled(true);
+                    event.getBlock().getLocation().getWorld().playSound(event.getBlock().getLocation(),org.bukkit.Sound.BLOCK_DISPENSER_FAIL,1,1);
                     return;
                 }
                 breakAtBlock.breakNaturally(tool);
